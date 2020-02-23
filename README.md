@@ -181,6 +181,13 @@ yay -S candy-icons-git
 git clone https://github.com/EliverLara/firefox-sweet-theme/ && cd firefox-sweet-theme
 ./scripts/install.sh -g
 
+### Kernel 5.5 No Sound
+Add following line to `/etc/modprobe.d/alsa.conf`
+
+```
+options snd-intel-dspcfg dsp_driver=1
+```
+
 ### Android emulator sound problem
 In `/etc/pulse/default.pa` change `load-module module-udev-detect` to `load-module module-udev-detect tsched=0`
 
