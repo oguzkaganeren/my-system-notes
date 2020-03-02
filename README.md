@@ -70,6 +70,12 @@ yay -S --mflags --skipinteg --needed spotify spotify-adblock
 ```
 sudo systemctl enable fstrim.timer
 ```
+### To fix background noise
+`sudo gedit /etc/tlp.conf`
+```
+SOUND_POWER_SAVE_ON_AC=1
+SOUND_POWER_SAVE_ON_BAT=1
+```
 ### Firefox screen tearing during scrolling Issue
 ```
 sudo gedit /etc/profile.d/kwin.sh
