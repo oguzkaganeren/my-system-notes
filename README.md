@@ -12,7 +12,7 @@ pamac update
 
 ### Packages I use
 ```
-sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape create_ap virtualbox fish flameshot deepin-terminal neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch
+sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape create_ap virtualbox fish flameshot deepin-terminal neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver
 ```
 
 ### Remove Packages which I don't use
