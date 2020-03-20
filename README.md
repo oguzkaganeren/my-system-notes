@@ -15,7 +15,7 @@ pamac update
 sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape create_ap virtualbox fish flameshot deepin-terminal neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch
 ```
 
-### Remove Packages which I don't use gedit
+### Remove Packages which I don't use
 ```
 sudo pacman -Rns kate
 ```
@@ -31,13 +31,13 @@ Set default deepin terminal then open it. Right click on the terminal and switch
 
 ### Aur Packages I use
 ```
-yay -S materia-theme opera chromium ttf-font-awesome ttf-font-awesome-4 ttf-roboto android-studio woeusb-git jdownloader2 ttf-ms-fonts vscodium-bin breeze-blurred-git otf-san-francisco xdman gwe svr zettlr-bin fslint waterfox-bin odio-appimage skypeforlinux-stable-bin posy-cursors all-repository-fonts ttf-wps-fonts performance-tweaks indicator-stickynotes
+yay -S materia-theme opera chromium ttf-font-awesome ttf-font-awesome-4 ttf-roboto android-studio woeusb-git jdownloader2 ttf-ms-fonts vscodium-bin breeze-blurred-git otf-san-francisco xdman gwe svr zettlr-bin fslint waterfox-bin odio-appimage skypeforlinux-stable-bin posy-cursors all-repository-fonts ttf-wps-fonts performance-tweaks indicator-stickynotes anydesk-bin icaclient
 ```
 ## Nvidia Options
 **There are many options for installing nvidia driver. Follow the [link](https://forum.manjaro.org/t/options-for-nvidia-optimus-graphics/75185)**
 ### Power settings(optional)
 About: https://forum.manjaro.org/t/howto-power-savings-setup-20180906/1445
-### Change light-locker with betterlockscreen(optinal)
+### Change light-locker with betterlockscreen(optional)
 ```
 sudo pacman -Rns light-locker
 yay -S betterlockscreen
