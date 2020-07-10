@@ -12,7 +12,7 @@ pamac update
 
 ### Packages I use
 ```
-sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape create_ap virtualbox fish flameshot deepin-terminal neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver
+sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape create_ap virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix
 ```
 
 ### Remove Packages which I don't use
@@ -27,11 +27,11 @@ omf install bobthefish
 ```
 ## Customize shell and terminal
 Change `.config/fish/conf.d/omf.fish` with [this](https://github.com/oguzkaganeren/manjaro-cinnamon-dell-7559/blob/master/.config/fish/omf.fish)
-Set default deepin terminal then open it. Right click on the terminal and switch theme `argonaut`.
+Set default terminal with tilix(I use the yaru theme on it).
 
 ### Aur Packages I use
 ```
-yay -S materia-theme opera chromium ttf-font-awesome ttf-font-awesome-4 ttf-roboto android-studio woeusb-git jdownloader2 ttf-ms-fonts vscodium-bin breeze-blurred-git otf-san-francisco xdman gwe svr zettlr-bin fslint waterfox-bin odio-appimage skypeforlinux-stable-bin posy-cursors all-repository-fonts ttf-wps-fonts performance-tweaks indicator-stickynotes anydesk-bin icaclient
+yay -S materia-theme opera chromium ttf-font-awesome ttf-font-awesome-4 ttf-roboto android-studio woeusb-git jdownloader2 ttf-ms-fonts vscodium-bin breeze-blurred-git otf-san-francisco xdman gwe svr zettlr-bin fslint odio-appimage skypeforlinux-stable-bin posy-cursors all-repository-fonts ttf-wps-fonts performance-tweaks indicator-stickynotes anydesk-bin icaclient
 ```
 ## Nvidia Options
 **There are many options for installing nvidia driver. Follow the [link](https://forum.manjaro.org/t/options-for-nvidia-optimus-graphics/75185)**
