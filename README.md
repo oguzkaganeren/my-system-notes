@@ -194,6 +194,22 @@ Add following line to `/etc/modprobe.d/alsa.conf`
 options snd-intel-dspcfg dsp_driver=1
 ```
 
+### Kernel 5.8 No Sound
+```
+sudo pacman -S  sof-firmware alsa-ucm-conf
+```
+
+```
+echo "blacklist snd_hda_intel" | sudo tee -a /etc/modprobe.d/blacklist.conf
+echo "blacklist snd_soc_skl" | sudo tee -a /etc/modprobe.d/blacklist.conf
+echo "load-module module-alsa-sink device=hw:0,0 channels=4" | sudo tee -a /etc/pulse/default.pa
+echo "load-module module-alsa-source device=hw:0,6 channels=4" | sudo tee -a /etc/pulse/default.pa
+alsamixer -c 0
+
+```
+After reboot `alsamixer -c 0` press “m” and increase volume level.
+
+
 ### Android emulator sound problem
 In `/etc/pulse/default.pa` change `load-module module-udev-detect` to `load-module module-udev-detect tsched=0`
 
