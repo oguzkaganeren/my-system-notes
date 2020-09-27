@@ -12,7 +12,7 @@ pamac update
 
 ### Packages I use
 ```
-sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape create_ap virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix
+sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix
 ```
 
 ### Remove Packages which I don't use
@@ -31,7 +31,7 @@ Set default terminal with tilix(I use the yaru theme on it).
 
 ### Aur Packages I use
 ```
-yay -S materia-theme opera chromium android-studio woeusb-git jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin posy-cursors performance-tweaks indicator-stickynotes anydesk-bin icaclient
+yay -S materia-theme opera chromium android-studio woeusb-git jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin posy-cursors performance-tweaks indicator-stickynotes anydesk-bin icaclient create_ap
 ```
 ## Nvidia Options
 **There are many options for installing nvidia driver. Follow the [link](https://forum.manjaro.org/t/options-for-nvidia-optimus-graphics/75185)**
