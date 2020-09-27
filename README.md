@@ -15,29 +15,34 @@ pamac update
 sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix
 ```
 
-### Remove Packages which I don't use
+### Aur Packages I use
+```
+yay -S materia-theme opera chromium android-studio woeusb-git jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin posy-cursors performance-tweaks indicator-stickynotes anydesk-bin icaclient create_ap
+```
+
+### [KDE]Remove Packages which I don't use
 ```
 sudo pacman -Rns kate
 ```
+
 ### Change the bash shell to fish
 ```
 chsh -s /usr/bin/fish
 curl -L https://get.oh-my.fish | fish
 omf install bobthefish
 ```
-## Customize shell and terminal
+
+## Customize shell and terminal(Do not need if you use tilix terminal)
 Change `.config/fish/conf.d/omf.fish` with [this](https://github.com/oguzkaganeren/manjaro-cinnamon-dell-7559/blob/master/.config/fish/omf.fish)
 Set default terminal with tilix(I use the yaru theme on it).
 
-### Aur Packages I use
-```
-yay -S materia-theme opera chromium android-studio woeusb-git jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin posy-cursors performance-tweaks indicator-stickynotes anydesk-bin icaclient create_ap
-```
+
 ## Nvidia Options
 **There are many options for installing nvidia driver. Follow the [link](https://forum.manjaro.org/t/options-for-nvidia-optimus-graphics/75185)**
 ### Power settings(optional)
 About: https://forum.manjaro.org/t/howto-power-savings-setup-20180906/1445
-### Change light-locker with betterlockscreen(optional)
+
+### [XFCE]Change light-locker with betterlockscreen(optional)
 ```
 sudo pacman -Rns light-locker
 yay -S betterlockscreen
@@ -55,10 +60,13 @@ Add super key whiskermenu
 xfce4-popup-whiskermenu
 ```
 **Change show desktop shortcut Settings  →  Window Manager  →  Keyboard  → Show Desktop**
+
 ### Dual-boot Wrong time problem
+When you use the dual-boot(windows-linux), then you get wrong time problem. To solve it, you can use below command.
 ```
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
+
 ### Adblock Spotify
 ```
 gpg --keyserver pool.sks-keyservers.net --recv-keys 2EBF997C15BDA244B6EBF5D84773BD5E130D1D45
@@ -67,18 +75,20 @@ yay -S --mflags --skipinteg --needed spotify spotify-adblock
 ```
 
 ### SSD
->  :exclamation: If you have a SSD, you should enable fstrim.
+>  :exclamation: If you have a SSD, you should enable [fstrim](https://opensource.com/article/20/2/trim-solid-state-storage-linux).
 
 ```
 sudo systemctl enable fstrim.timer
 ```
+
 ### To fix background noise
 `sudo gedit /etc/tlp.conf`
 ```
 SOUND_POWER_SAVE_ON_AC=1
 SOUND_POWER_SAVE_ON_BAT=1
 ```
-### Firefox screen tearing during scrolling Issue
+
+### [KDE-Maybe other desktops]Firefox screen tearing during scrolling Issue
 ```
 sudo gedit /etc/profile.d/kwin.sh
 ```
@@ -104,11 +114,13 @@ Open firefox and
 then search  **layers.acceleration.force-enabled**
 It should be true.
 Done.
-### If skype not run
+
+### If skype doesn't work
 ```
 sudo sysctl kernel.unprivileged_userns_clone=1
 ```
-### If headphones not detected when restart (after startup not working, I am working on it )
+
+### If your headphones is not detected when restart your system[dell-7559]
 ```
 sudo nano /etc/pulse/default.pa
 ```
