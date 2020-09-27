@@ -61,6 +61,8 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 ```
 ### Adblock Spotify
 ```
+gpg --keyserver pool.sks-keyservers.net --recv-keys 2EBF997C15BDA244B6EBF5D84773BD5E130D1D45
+gpg --keyserver pool.sks-keyservers.net --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
 yay -S --mflags --skipinteg --needed spotify spotify-adblock
 ```
 
