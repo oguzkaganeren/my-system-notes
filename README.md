@@ -221,7 +221,7 @@ echo "load-module module-alsa-source device=hw:0,6 channels=4" | sudo tee -a /et
 alsamixer -c 0
 
 ```
-After reboot `alsamixer -c 0` press “m” and increase volume level.
+After reboot `alsamixer -c 0` press “m” and increase volume level and `sudo alsactl store`.
 
 
 ### Android emulator sound problem
