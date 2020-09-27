@@ -38,9 +38,7 @@ Set default terminal with tilix(I use the yaru theme on it).
 
 
 ## Nvidia Options
-**There are many options for installing nvidia driver. Follow the [link](https://forum.manjaro.org/t/options-for-nvidia-optimus-graphics/75185)**
-### Power settings(optional)
-About: https://forum.manjaro.org/t/howto-power-savings-setup-20180906/1445
+https://archived.forum.manjaro.org/t/guide-install-and-configure-optimus-manager-for-hybrid-gpu-setups-intel-nvidia/92196
 
 ### [XFCE]Change light-locker with betterlockscreen(optional)
 ```
