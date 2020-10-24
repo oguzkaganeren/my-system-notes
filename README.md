@@ -343,6 +343,19 @@ Or, I fix it with;
 ```
 sudo chmod -002 /usr
 ```
+## ENOSPC: System limit for number of file watchers reached
+```
+sudo gedit /etc/sysctl.conf
+```
+add
+```
+fs.inotify.max_user_watches=524288
+```
+Then
+```
+sudo sysctl -p
+```
+
 ## Stuck at hardware detection
 >  :exclamation: When installing, It can be stuck at hardware detection. You can apply these settings. It does not appear the newer iso.
 ```
