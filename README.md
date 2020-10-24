@@ -308,6 +308,9 @@ sudo systemctl enable --now postgresql.service
 sudo pacman -S pgadmin4
 
 ```
+## Tricks
+### SVG to PNG for all subdirectories
+`find -name "*.svg" -exec sh -c 'inkscape $1 --export-png=${1%.svg}.png' _ {} \;`
 ## Some Errors and fixer
 ### Virtualbox
 #### NS_ERROR_FAILURE (0x80004005) Error
