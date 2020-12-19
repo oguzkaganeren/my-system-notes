@@ -37,8 +37,19 @@ Change `.config/fish/conf.d/omf.fish` with [this](https://github.com/oguzkaganer
 Set default terminal with tilix(I use the yaru theme on it).
 
 
-## Nvidia Options
-https://archived.forum.manjaro.org/t/guide-install-and-configure-optimus-manager-for-hybrid-gpu-setups-intel-nvidia/92196
+## Nvidia Optimus Manager
+
+```
+yay -S optimus-manager-qt
+```
+Then
+```
+systemctl enable optimus-manager.service
+```
+and add optimus-manager-qt to your startup.
+
+
+https://wiki.manjaro.org/index.php/Configure_Graphics_Cards
 
 ### [XFCE]Change light-locker with betterlockscreen(optional)
 ```
