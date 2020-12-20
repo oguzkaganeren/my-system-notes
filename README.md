@@ -20,6 +20,16 @@ sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtua
 yay -S materia-theme opera chromium android-studio woeusb-git jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin posy-cursors performance-tweaks indicator-stickynotes anydesk-bin icaclient create_ap
 ```
 
+### HDMI unplugged problem
+```
+sudo gedit /etc/udev/rules.d/90-mhwd-prime-powermanagement.rules 
+```
+Then add to comment these lines:
+```
+# Remove NVIDIA Audio devices, if present
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
+```
+
 ### [KDE]Remove Packages which I don't use
 ```
 sudo pacman -Rns kate
