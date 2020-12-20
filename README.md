@@ -17,7 +17,7 @@ sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtua
 
 ### Aur Packages I use
 ```
-yay -S materia-theme opera chromium android-studio woeusb-git jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin posy-cursors performance-tweaks indicator-stickynotes anydesk-bin icaclient create_ap
+yay -S materia-theme opera chromium android-studio woeusb jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin posy-cursors performance-tweaks indicator-stickynotes anydesk-bin icaclient create_ap
 ```
 
 ### HDMI unplugged problem
@@ -49,17 +49,7 @@ Set default terminal with tilix(I use the yaru theme on it).
 
 ## Nvidia Optimus Manager
 
-```
-yay -S optimus-manager-qt
-```
-Then
-```
-systemctl enable optimus-manager.service
-```
-and add optimus-manager-qt to your startup.
-
-
-https://wiki.manjaro.org/index.php/Configure_Graphics_Cards
+No more needed
 
 ### [XFCE]Change light-locker with betterlockscreen(optional)
 ```
