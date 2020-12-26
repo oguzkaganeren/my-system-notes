@@ -39,7 +39,7 @@ sudo pacman -Rns kate
 ```
 chsh -s /usr/bin/fish
 curl -L https://get.oh-my.fish | fish
-omf install bobthefish
+omf install shellder
 ```
 
 ## Customize shell and terminal(Do not need if you use tilix terminal)
