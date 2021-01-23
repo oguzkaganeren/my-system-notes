@@ -100,6 +100,8 @@ SOUND_POWER_SAVE_ON_BAT=1
 
 ```
 set --export ANDROID_SDK_ROOT /run/media/oguz/Files/Programs/sdkLinux/
+flutter config --android-sdk /run/media/oguz/Files/Programs/sdkLinux/
+
 ```
 
 ### [KDE-Maybe other desktops]Firefox screen tearing during scrolling Issue
