@@ -96,6 +96,11 @@ sudo systemctl enable fstrim.timer
 SOUND_POWER_SAVE_ON_AC=1
 SOUND_POWER_SAVE_ON_BAT=1
 ```
+## Environments
+
+```
+set --export ANDROID_SDK_ROOT /run/media/oguz/Files/Programs/sdkLinux/
+```
 
 ### [KDE-Maybe other desktops]Firefox screen tearing during scrolling Issue
 ```
