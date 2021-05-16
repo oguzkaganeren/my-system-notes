@@ -412,3 +412,8 @@ def run():
 ```
 sudo sudo pacman -S binutils make gcc pkg-config fakeroot
 ```
+## nodejs error: ‘remove_cv_t’ is not a member of ‘std’; did you mean ‘remove_cv’?
+remove nodejs then install nodejs-lts-fermium
+```
+sudo pacman -S nodejs-lts-fermium
+```
