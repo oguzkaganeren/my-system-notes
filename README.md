@@ -3,6 +3,12 @@
 ```
 sudo pacman-mirrors --fasttrack 5
 ```
+### Change branch
+```
+sudo pacman-mirrors --api --set-branch {branch}
+```
+
+
 ### Update Your System
 ```
 sudo pacman -Syu
