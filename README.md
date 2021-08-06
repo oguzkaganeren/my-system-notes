@@ -17,7 +17,7 @@ pamac install yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtual
 
 ### Aur Packages I use
 ```
-yay -S materia-theme opera chromium android-studio woeusb jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin performance-tweaks indicator-stickynotes anydesk-bin icaclient create_ap
+pamac build opera chromium android-studio woeusb jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin indicator-stickynotes anydesk-bin icaclient create_ap
 ```
 
 ### HDMI unplugged problem
