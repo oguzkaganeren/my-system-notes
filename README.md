@@ -1,13 +1,14 @@
 # manjaro-notes
+
 ### Fastest pacman
 ```
 sudo pacman-mirrors --fasttrack 5
 ```
+
 ### Change branch
 ```
 sudo pacman-mirrors --api --set-branch {branch}
 ```
-
 
 ### Update Your System
 ```
@@ -21,24 +22,14 @@ pamac update
 pamac install yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix x11-ssh-askpass drawing
 ```
 
+
 ### Aur Packages I use
+To import spotify gpg key
 ```
-pamac build opera chromium android-studio woeusb jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin indicator-stickynotes anydesk-bin icaclient create_ap
+gpg --recv-key D1742AD60D811D58
 ```
-
-### HDMI unplugged problem
 ```
-sudo gedit /etc/udev/rules.d/90-mhwd-prime-powermanagement.rules 
-```
-Then add to comment these lines:
-```
-# Remove NVIDIA Audio devices, if present
-ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
-```
-
-### [KDE]Remove Packages which I don't use
-```
-sudo pacman -Rns kate
+pamac build opera chromium android-studio woeusb jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin indicator-stickynotes anydesk-bin icaclient create_ap spotify spotify-adblock
 ```
 
 ### Change the bash shell to fish
@@ -48,14 +39,41 @@ curl -L https://get.oh-my.fish | fish
 omf install https://github.com/simnalamburt/shellder
 ```
 
-## Customize shell and terminal(Do not need if you use tilix terminal)
-Change `.config/fish/conf.d/omf.fish` with [this](https://github.com/oguzkaganeren/manjaro-cinnamon-dell-7559/blob/master/.config/fish/omf.fish)
-Set default terminal with tilix(I use the yaru theme on it).
+## Nvidia Driver
+
+Install with Manjaro Setting Manager
 
 
-## Nvidia Optimus Manager
+### SSD
+>  :exclamation: If you have a SSD, you should enable [fstrim](https://opensource.com/article/20/2/trim-solid-state-storage-linux).
 
-No more needed
+```
+sudo systemctl enable fstrim.timer
+```
+
+### To fix background noise
+`sudo gedit /etc/tlp.conf`
+```
+SOUND_POWER_SAVE_ON_AC=1
+SOUND_POWER_SAVE_ON_BAT=1
+```
+
+### Auto mount other partitions
+If you have other partitions(E, D etc.). It can be mounted on the startup.
+
+```
+lsblk -f
+```
+The command shows your disks uuid.
+```
+sudo gedit /etc/fstab 
+```
+Open your fstab config with the command. You should add codes similar to the following example. You should change UUID and /run/media/yourUserName/Partition.
+```
+UUID=b336b98e-d0b5-4254-b6aa-9e66f85b0dfc /run/media/oguz/Files ext4 defaults  0 0
+```
+
+>  :exclamation: If you use manjaro with dual boot, you should close fast-startup,hibarnate on your Windows, otherwise, you have not a write permission for other partitions.
 
 ### [XFCE]Change light-locker with betterlockscreen(optional)
 ```
@@ -76,39 +94,6 @@ xfce4-popup-whiskermenu
 ```
 **Change show desktop shortcut Settings  →  Window Manager  →  Keyboard  → Show Desktop**
 
-### Dual-boot Wrong time problem
-When you use the dual-boot(windows-linux), then you get wrong time problem. To solve it, you can use below command.
-```
-timedatectl set-local-rtc 1 --adjust-system-clock
-```
-
-### Adblock Spotify
-```
-gpg --keyserver pool.sks-keyservers.net --recv-keys 2EBF997C15BDA244B6EBF5D84773BD5E130D1D45
-gpg --keyserver pool.sks-keyservers.net --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-yay -S --mflags --skipinteg --needed spotify spotify-adblock
-```
-
-### SSD
->  :exclamation: If you have a SSD, you should enable [fstrim](https://opensource.com/article/20/2/trim-solid-state-storage-linux).
-
-```
-sudo systemctl enable fstrim.timer
-```
-
-### To fix background noise
-`sudo gedit /etc/tlp.conf`
-```
-SOUND_POWER_SAVE_ON_AC=1
-SOUND_POWER_SAVE_ON_BAT=1
-```
-## Environments
-
-```
-set --export ANDROID_SDK_ROOT /run/media/oguz/Files/Programs/sdkLinux/
-flutter config --android-sdk /run/media/oguz/Files/Programs/sdkLinux/
-
-```
 
 ### [KDE-Maybe other desktops]Firefox screen tearing during scrolling Issue
 ```
@@ -137,11 +122,6 @@ then search  **layers.acceleration.force-enabled**
 It should be true.
 Done.
 
-### If skype doesn't work
-```
-sudo sysctl kernel.unprivileged_userns_clone=1
-```
-
 ### If your headphones is not detected when restart your system[dell-7559]
 ```
 sudo nano /etc/pulse/default.pa
@@ -151,13 +131,6 @@ at the bottom under `### Make some devices default` put
 set-default-sink 3
 set-default-source 3
 ```
-## Nvidia Options
-**There are many options for installing nvidia driver. Follow the [link](https://forum.manjaro.org/t/options-for-nvidia-optimus-graphics/75185)**
-
-### Open Wifi Hotspot
-```
-sudo create_ap wlp5s0 wlp5s0 MyAccessPoint password
-```
 
 #### Libre Office icon;
 ```
@@ -166,52 +139,7 @@ yay -S papirus-libreoffice-theme
 After that;
 LibreOffice->tools->options->View->Icon Style->Papirus
 
-### Turknet slow internet problem
-```
-sudo nano /etc/resolv.conf
-```
-```
-# Generated by NetworkManager
-nameserver 192.168.1.1
-search domain.name
-nameserver 8.26.56.26
-nameserver 8.20.247.20
-```
-Then save it and
-```
-sudo systemctl restart NetworkManager
-```
 
-### Latte-Dock
-If you want to panel which like first image, you should install latte-dock.
-```
-sudo pacman -S latte-dock
-latte-dock
-```
-You can edit the dock with right click on it.(You can add programs shortcut with drag-drop.)
-#### For shortcut(Windows key) for the dock
-Right click on the dock and Layout>Plasma, then open terminal
-```
-kwriteconfig5 --file ~/.config/kwinrc --group ModifierOnlyShortcuts --key Meta "org.kde.lattedock,/Latte,org.kde.LatteDock,activateLauncherMenu"
-qdbus org.kde.KWin /KWin reconfigure
-```
-Done. After that, you can open application launcher with Windows key.
-### For Other Partitations
-If you have another partition(E, D etc.). You can mount it on the startup. Thus some applications which are using other partitions don't get an error.
-
-```
-lsblk -f
-```
-The command shows your disks uuid.
-```
-sudo gedit /etc/fstab 
-```
-Open your fstab config with the command. You should add codes similar to the following example. You should change UUID and /run/media/yourUserName/Partition.
-```
-UUID=b336b98e-d0b5-4254-b6aa-9e66f85b0dfc /run/media/oguz/Files ext4 defaults  0 0
-```
-
->  :exclamation: If you use manjaro with dual boot, you should close fast-startup,hibarnate on your Windows, otherwise, you have not a write permission for other partitions.
 ### Touchpad tap-to-click
 sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf  
 ```
@@ -233,34 +161,6 @@ sudo pacman -S virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netc
 sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
 ```
-
-yay -S candy-icons-git
-
-git clone https://github.com/EliverLara/firefox-sweet-theme/ && cd firefox-sweet-theme
-./scripts/install.sh -g
-
-### Kernel 5.5 No Sound
-Add following line to `/etc/modprobe.d/alsa.conf`
-
-```
-options snd-intel-dspcfg dsp_driver=1
-```
-
-### Kernel 5.8 No Sound
-```
-sudo pacman -S  sof-firmware alsa-ucm-conf
-```
-
-```
-echo "blacklist snd_hda_intel" | sudo tee -a /etc/modprobe.d/blacklist.conf
-echo "blacklist snd_soc_skl" | sudo tee -a /etc/modprobe.d/blacklist.conf
-echo "load-module module-alsa-sink device=hw:0,0 channels=4" | sudo tee -a /etc/pulse/default.pa
-echo "load-module module-alsa-source device=hw:0,6 channels=4" | sudo tee -a /etc/pulse/default.pa
-alsamixer -c 0
-
-```
-After reboot `alsamixer -c 0` press “m” and increase volume level and `sudo alsactl store`.
-
 
 ### Android emulator sound problem
 In `/etc/pulse/default.pa` change `load-module module-udev-detect` to `load-module module-udev-detect tsched=0`
@@ -422,4 +322,19 @@ sudo sudo pacman -S binutils make gcc pkg-config fakeroot
 remove nodejs then install nodejs-lts-fermium
 ```
 sudo pacman -S nodejs-lts-fermium
+```
+### HDMI unplugged problem
+```
+sudo gedit /etc/udev/rules.d/90-mhwd-prime-powermanagement.rules 
+```
+Then add to comment these lines:
+```
+# Remove NVIDIA Audio devices, if present
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
+```
+
+### Dual-boot Wrong time problem
+When you use the dual-boot(windows-linux), then you get wrong time problem. To solve it, you can use below command.
+```
+timedatectl set-local-rtc 1 --adjust-system-clock
 ```
