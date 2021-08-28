@@ -75,6 +75,16 @@ UUID=b336b98e-d0b5-4254-b6aa-9e66f85b0dfc /run/media/oguz/Files ext4 defaults  0
 
 >  :exclamation: If you use manjaro with dual boot, you should close fast-startup,hibarnate on your Windows, otherwise, you have not a write permission for other partitions.
 
+### To fix second screen lagging when lid closed
+Open `/etc/UPower/UPower.conf` and then change the line as `true`
+```
+IgnoreLid=true
+```
+Also edit `/etc/systemd/logind.conf`
+```
+HandleLidSwitch=ignore
+```
+
 ### [XFCE]Change light-locker with betterlockscreen(optional)
 ```
 sudo pacman -Rns light-locker
