@@ -29,7 +29,7 @@ To import spotify gpg key
 gpg --recv-key D1742AD60D811D58
 ```
 ```
-pamac build opera chromium android-studio woeusb jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin indicator-stickynotes anydesk-bin icaclient create_ap spotify spotify-adblock
+pamac build opera chromium android-studio woeusb jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin indicator-stickynotes anydesk-bin icaclient create_ap spotify
 ```
 
 ### Change the bash shell to fish
