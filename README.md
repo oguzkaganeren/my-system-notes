@@ -348,3 +348,6 @@ When you use the dual-boot(windows-linux), then you get wrong time problem. To s
 ```
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
+### Useful commands and links
+sudo dmesg --level emerg,alert,crit,err,warn
+https://askubuntu.com/questions/1250040/how-do-i-fix-mds-cpu-bug-present-and-smt-on-data-leak-possible-errors-from-lo
