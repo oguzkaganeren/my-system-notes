@@ -21,22 +21,19 @@ pamac update
 ```
 pamac install yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix x11-ssh-askpass drawing opera chromium spotify-launcher
 ```
+### Paru
+
+```
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+```
 
 
-### Snap Packages I use
+### Aur Packages I use
 ```
-sudo pacman -S snapd
-sudo systemctl enable --now snapd.socket
-sudo ln -s /var/lib/snapd/snap /snap
-```
-```
-sudo snap install android-studio --classic
-sudo snap install jdownloader2 --classic
-sudo snap install codium --classic
-sudo snap install skype --classic
-sudo snap install mailspring --classic
-sudo snap install spotify --classic
-sudo snap install raven-reader --classic
+paru -S android-studio woeusb vscodium-bin mailspring raven-reader-bin
 ```
 
 ### Change the bash shell to fish
