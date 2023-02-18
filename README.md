@@ -19,17 +19,24 @@ pamac update
 
 ### Packages I use
 ```
-pamac install yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix x11-ssh-askpass drawing mailspring
+pamac install yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix x11-ssh-askpass drawing opera chromium spotify-launcher
 ```
 
 
-### Aur Packages I use
-To import spotify gpg key
+### Snap Packages I use
 ```
-gpg --recv-key D1742AD60D811D58
+sudo pacman -S snapd
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
 ```
 ```
-pamac build opera chromium android-studio woeusb jdownloader2 vscodium-bin breeze-blurred-git xdman gwe svr skypeforlinux-stable-bin indicator-stickynotes anydesk-bin icaclient create_ap spotify
+sudo snap install android-studio --classic
+sudo snap install jdownloader2 --classic
+sudo snap install codium --classic
+sudo snap install skype --classic
+sudo snap install mailspring --classic
+sudo snap install spotify --classic
+sudo snap install raven-reader --classic
 ```
 
 ### Change the bash shell to fish
