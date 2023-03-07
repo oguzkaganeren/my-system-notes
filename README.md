@@ -34,8 +34,12 @@ curl -L https://get.oh-my.fish | fish
 omf install https://github.com/simnalamburt/shellder
 ```
 
-### Enable sysrq (to able to use REISUB)
+### Enable sysrq (to able to use REISUB) Don't try if you don't know what you do
 Add to your /etc/default/grub in the GRUB_CMDLINE_LINUX_DEFAULT parameter the `sysrq_always_enabled=1` variable
+
+For dell g3 3590,  Ctrl+Alt+PrtSc and keep the Alt key pressed
+For restart type R E I S U B
+For shutdown type R E I S U O
 
 Details: https://forum.manjaro.org/t/howto-reboot-turn-off-your-frozen-computer-reisub-reisuo/3855
 
