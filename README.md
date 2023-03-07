@@ -21,19 +21,10 @@ pamac update
 ```
 pamac install yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix x11-ssh-askpass drawing opera chromium spotify-launcher
 ```
-### Paru
-
-```
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
-
 
 ### Aur Packages I use
 ```
-paru -S android-studio woeusb vscodium-bin mailspring raven-reader-bin
+yay -S android-studio woeusb vscodium-bin mailspring raven-reader-bin
 ```
 
 ### Change the bash shell to fish
@@ -43,10 +34,10 @@ curl -L https://get.oh-my.fish | fish
 omf install https://github.com/simnalamburt/shellder
 ```
 
-## Nvidia Driver
+### Enable sysrq (to able to use REISUB)
+Add to your /etc/default/grub in the GRUB_CMDLINE_LINUX_DEFAULT parameter the `sysrq_always_enabled=1` variable
 
-Install with Manjaro Setting Manager
-
+Details: https://forum.manjaro.org/t/howto-reboot-turn-off-your-frozen-computer-reisub-reisuo/3855
 
 ### SSD
 >  :exclamation: If you have a SSD, you should enable [fstrim](https://opensource.com/article/20/2/trim-solid-state-storage-linux).
