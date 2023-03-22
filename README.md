@@ -1,25 +1,13 @@
-# manjaro-notes
-
-### Fastest pacman
-```
-sudo pacman-mirrors --fasttrack 5
-```
-
-### Change branch
-```
-sudo pacman-mirrors --api --set-branch {branch}
-```
+# notes
 
 ### Update Your System
 ```
 sudo pacman -Syu
-or 
-pamac update
 ```
 
 ### Packages I use
 ```
-pamac install yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix x11-ssh-askpass drawing opera chromium spotify-launcher
+sudo pacman -S yay aria2 speedtest-cli telegram-desktop kdenlive inkscape virtualbox fish flameshot neofetch gtop kolourpaint gedit autoconf binutils make gcc pkg-config fakeroot libtool automake patch dbeaver tilix x11-ssh-askpass drawing opera chromium spotify-launcher
 ```
 
 ### Aur Packages I use
@@ -33,15 +21,6 @@ chsh -s /usr/bin/fish
 curl -L https://get.oh-my.fish | fish
 omf install https://github.com/simnalamburt/shellder
 ```
-
-### Enable sysrq (to able to use REISUB) Don't try if you don't know what you do
-Add to your /etc/default/grub in the GRUB_CMDLINE_LINUX_DEFAULT parameter the `sysrq_always_enabled=1` variable
-
-For dell g3 3590,  Ctrl+Alt+PrtSc and keep the Alt key pressed
-For restart type R E I S U B
-For shutdown type R E I S U O
-
-Details: https://forum.manjaro.org/t/howto-reboot-turn-off-your-frozen-computer-reisub-reisuo/3855
 
 ### SSD
 >  :exclamation: If you have a SSD, you should enable [fstrim](https://opensource.com/article/20/2/trim-solid-state-storage-linux).
@@ -84,52 +63,6 @@ Also edit `/etc/systemd/logind.conf`
 HandleLidSwitch=ignore
 ```
 
-### [XFCE]Change light-locker with betterlockscreen(optional)
-```
-sudo pacman -Rns light-locker
-yay -S betterlockscreen
-cp /usr/share/doc/betterlockscreen/examples/betterlockscreenrc ~/.config
-betterlockscreen -u /usr/share/backgrounds/wallpapers-2018/palm-wave.jpg
-```
-Set shortkey;
-```
-betterlockscreen -l dim
-```
-`Right click -> properties` on whisker menu(manjaro icon at bottom-left of the screen). Change lock screen command with `betterlockscreen -l dim` at Commands tab.
-**Reset all keyboard shortcut Settings  →  Keyboard  (optionally)**
-Add super key whiskermenu
-```
-xfce4-popup-whiskermenu
-```
-**Change show desktop shortcut Settings  →  Window Manager  →  Keyboard  → Show Desktop**
-
-
-### [KDE-Maybe other desktops]Firefox screen tearing during scrolling Issue
-```
-sudo gedit /etc/profile.d/kwin.sh
-```
-then put this in it,
-```
-#!/bin/sh
-
-export KWIN_TRIPLE_BUFFER=1
-```
-After that, 
-```
-sudo gedit ~/.config/kwinrc
-```
-Add those parameters at the bottom,
-
-```
-MaxFPS=60
-RefreshRate=60
-```
-Save it and reboot. 
-Open firefox and 
-**about:config**
-then search  **layers.acceleration.force-enabled**
-It should be true.
-Done.
 
 ### If your headphones is not detected when restart your system[dell-7559]
 ```
@@ -140,14 +73,6 @@ at the bottom under `### Make some devices default` put
 set-default-sink 3
 set-default-source 3
 ```
-
-#### Libre Office icon;
-```
-yay -S papirus-libreoffice-theme
-```
-After that;
-LibreOffice->tools->options->View->Icon Style->Papirus
-
 
 ### Touchpad tap-to-click
 sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf  
